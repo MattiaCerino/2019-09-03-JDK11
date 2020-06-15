@@ -2,9 +2,12 @@ package it.polito.tdp.food.model;
 
 public class InfoArco {
 
+	// Classe che rappresenta gli archi del grafo...creo un nuovo elemento di questa classe se esiste almeno un Food che può essere servito in entrambi i modi
+	// descritti dalle porzioni (rappresentati dalle stringhe). Il peso indica quanti cibi vengono serviti con entrambi i tipi di porzione
 	private String vertice1;
 	private String vertice2;
 	private int peso ;
+	
 	/**
 	 * @param vertice1
 	 * @param vertice2

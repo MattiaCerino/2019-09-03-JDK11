@@ -1,6 +1,7 @@
 package it.polito.tdp.food.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.jgrapht.Graph;
@@ -28,14 +29,13 @@ public class Model {
 		List<InfoArco> archi = dao.getTuttiGliArchi();
 
 		for (InfoArco a : archi) {
-			if (this.graph.vertexSet().contains(a.getVertice1()) && 
-					this.graph.vertexSet().contains(a.getVertice2())) {
+			// Scelgo il vertexSet del grafo e non l'ArrayList (vertici) perché il contains in un'arraylist ha complessità O(N) mentre in un set ha complessità O(1)
+			if (this.graph.vertexSet().contains(a.getVertice1()) && this.graph.vertexSet().contains(a.getVertice2())) {
 				Graphs.addEdge(this.graph, a.getVertice1(), a.getVertice2(), a.getPeso());
 			}
 		}
 		
-		return String.format("Grafo creato (%d vertici, %d archi)\n", 
-				this.graph.vertexSet().size(), this.graph.edgeSet().size()); 
+		return String.format("Grafo creato (%d vertici, %d archi)\n", this.graph.vertexSet().size(), this.graph.edgeSet().size()); 
 
 //		System.out.println(this.graph);
 
@@ -48,6 +48,7 @@ public class Model {
 			double peso = this.graph.getEdgeWeight(this.graph.getEdge(porzione, v)) ;
 			result.add(new PorzioneAdiacente(v, peso)) ;
 		}
+		Collections.sort(result);
 		return result ;
 	}
 

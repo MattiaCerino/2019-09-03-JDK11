@@ -61,10 +61,7 @@ public class FoodDao {
 			
 			List<InfoArco> result = new ArrayList<>() ;
 			while(res.next()) {
-				result.add( new InfoArco(
-						res.getString("NAME1"), 
-						res.getString("NAME2"), 
-						res.getInt("CNT"))) ;
+				result.add( new InfoArco(res.getString("NAME1"), res.getString("NAME2"), res.getInt("CNT"))) ;
 			}
 			
 			conn.close() ;

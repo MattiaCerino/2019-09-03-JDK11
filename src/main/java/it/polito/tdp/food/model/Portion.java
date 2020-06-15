@@ -1,6 +1,11 @@
 package it.polito.tdp.food.model;
 
-public class Portion {
+/*
+In questo caso non uso questa classe perché a me non serve avere tutti gli attributi della classe ma basta avere, come vertici del grafo, il portion_display_name.
+Quindi i vertici del grafo creato non saranno delle Portion ma delle String
+ */
+
+public class Portion { 
 	private Integer portion_id;
 	private Double portion_amount;
 	private String portion_display_name;

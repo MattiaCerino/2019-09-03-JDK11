@@ -85,7 +85,7 @@ public class FoodController {
     	String msg = model.creaGrafo(C);
     	txtResult.appendText(msg);
     	
-    	boxPorzioni.getItems().clear();
+    	boxPorzioni.getItems().clear();	// Cancello e ricreo la tendina per far si che non ci possano essere problemi nel caso in cui cambi il numero di calorie
     	boxPorzioni.getItems().addAll(model.getVerticiGrafo()) ;
     	
     }

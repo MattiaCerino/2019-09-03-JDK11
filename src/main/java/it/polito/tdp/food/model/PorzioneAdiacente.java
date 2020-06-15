@@ -1,9 +1,10 @@
 package it.polito.tdp.food.model;
 
-public class PorzioneAdiacente {
+public class PorzioneAdiacente implements Comparable<PorzioneAdiacente>{
 	
 	private String porzione ;
 	private Double peso ;
+	
 	/**
 	 * @param porzione
 	 * @param peso
@@ -24,6 +25,11 @@ public class PorzioneAdiacente {
 	}
 	public void setPeso(Double peso) {
 		this.peso = peso;
+	}
+	
+	@Override
+	public int compareTo(PorzioneAdiacente other) {
+		return (int) -(this.peso-other.peso);
 	}
 	
 	
